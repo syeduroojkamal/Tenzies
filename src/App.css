@@ -77,4 +77,5 @@ main {
   font-size: large;
   opacity: 90%;
   font-weight: 600;
+  width: min(50vw, 500px);
 }
