@@ -1,7 +1,6 @@
 {
-  "homepage": "https://syeduroojkamal.github.io/Tenzies/",
   "name": "tenzies",
-  "private": true,
+  "homepage": "https://syeduroojkamal.github.io/tenzies/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
