@@ -45,7 +45,8 @@ main {
   }
 }
 
-.rollButton {
+.rollButton,
+.restartButton {
   color: white;
   background-color: rgb(0, 89, 255);
   border-style: solid;
@@ -56,4 +57,24 @@ main {
   margin-top: 1rem;
   font-weight: 400;
   font-size: large;
+}
+
+.winMessageBackground {
+  background-color: rgba(11, 11, 11, 0.409);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.winMessageContainer {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 3rem;
+  border-radius: 0.3rem;
+  font-size: large;
+  opacity: 90%;
+  font-weight: 600;
 }

@@ -16,13 +16,30 @@ export default function App() {
     false,
   ]);
   const [allButtonsNumber, setAllButtonsNumber] = useState([]);
+  const [tryCounter, setTryCounter] = useState(0);
 
   const CheckWin = () => {
+    function restart() {
+      window.location.reload();
+    }
     if (
       allButtonsNumber.every((val) => val === allButtonsNumber[0]) &&
       allButtonsState.every((val) => val === true)
     ) {
-      return <Confetti width={window.innerWidth} height={window.innerHeight} />;
+      return (
+        <>
+          <Confetti width={window.innerWidth} height={window.innerHeight} />
+          <div className="winMessageBackground">
+            <div className="winMessageContainer">
+              <p>Congratulations.</p> <p>You won!!!</p>
+              <p>You took {tryCounter} rolls.</p>
+              <button className="restartButton" onClick={restart}>
+                Restart
+              </button>
+            </div>
+          </div>
+        </>
+      );
     }
   };
 
@@ -54,12 +71,13 @@ export default function App() {
   }, []);
 
   const randomlyGeneratedButtons = allButtonsNumber.map((rand, index) => (
-    <button id={index} key={index} data-index={index}>
+    <button key={index} data-index={index}>
       {rand}
     </button>
   ));
 
   function roll() {
+    setTryCounter((prev) => ++prev);
     for (let i = 0; i < allButtonsState.length; i++) {
       if (!allButtonsState[i]) {
         setAllButtonsNumber((prev) => {
